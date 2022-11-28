@@ -1,0 +1,96 @@
+/*universal font*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+
+/*the *: is the universal selector that can have effect on the entire document body and html part*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/*Website Variables*/
+:root {
+    --c1: #F7A4A4;
+    --c2: #FFFBC1;
+    --c3: #E97777;
+    --c4: #8B7E74;
+    --c5: #65647C;
+    --c6: #BA94D1;
+}
+
+/*html segment*/
+html {
+    font-family: 'Rubik Glitch', cursive;
+}
+
+/*capturing the main page wrapper*/
+.body {
+    height: 100vh; /*vh stands for viewport height*/
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+}
+
+.header {
+    background-color: transparent;
+    grid-column: 1 / span 12;
+    grid-row: 1 / span 1;
+}
+
+.footer {
+    z-index: 99;
+    background-color: #FEBE8C;
+    grid-column: 1 / span 12;
+    grid-row: 12 / span 1;
+    position: fixed;
+    /*Expand Constrains*/
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 95vh;
+}
+
+.leftSideM {
+    background-color: transparent;
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 10;
+    width: 5vw;
+}
+
+.rightSideM {
+    background-color: transparent;
+    grid-column: 12 / span 1;
+    grid-row: 2 / span 10;
+    z-index: 99;
+    width: 5vw;
+}
+
+.content {
+    /*Position and Colors*/
+    position: absolute;
+    background: radial-gradient(circle at top, var(--c1), var(--c2), var(--c3), transparent),
+    radial-gradient(circle at left, var(--c4), var(--c5), var(--c6));
+    background-size: 400vh 400vw;
+    -webkit-animation: AnimatedBG 12s ease-in-out infinite;
+    font-size: 20pt;
+    grid-column: 2 / span 10;
+    grid-row: 2 / span 10;
+    height: 200vh;
+    /*Expand Constrains*/
+    top: 10vh;
+    left: 5vw;
+    right: 5vw;
+    bottom: 10vh;
+}
+
+/*Animation Engine*/
+@-webkit-keyframes AnimatedBG {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 100%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
